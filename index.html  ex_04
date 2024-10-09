@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- LIEN POUR LA POLICE LATO DEPUIS GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Titre de la page</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    
+	<!--  -->
+	<!-- CONTENU DE LA PAGE WEB A PARTIR D'ICI -->
+    <!--  -->
+    <p>Premier paragraphe</p>
+    <p>Deuxième paragraphe</p>
+    <p>Troisième paragraphe</p>
+
+
+
+
+
+	<!--  -->
+	<!-- JS SCROLL TO -->
+	<!--  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.js-scrollTo').on('click', function (e) {
+				e.preventDefault();
+				var $target = $($(this).attr('href'));
+				var $header = $('#header-main');
+				var headerHeight = $header.height() + 50;
+				$('html, body').animate({
+					scrollTop: $target.offset().top - headerHeight + 'px'
+				}, 200);
+				return false;
+			});
+		});
+		
+		
+	</script>
+</body>
+
+</html>
