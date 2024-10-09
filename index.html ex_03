@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tippy.js Tutorial Mode</title>
+   
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css">
+</head>
+<body>
+
+    <div class="element" id="imageElement">
+        <img src="epitech.jpeg" alt="Placeholder Image">
+    </div>
+
+    <div class="element square" id="squareElement"></div>
+
+    <div class="element" id="soundElement">
+        <audio controls>
+            <source src="https://docs.google.com/file/d/0B-hlyylI1d0XMTRmcFA2YlFCVm8/view?resourcekey=0-6t3E8J3su7QiDv65y-8Slg" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="element" id="buttonElement">
+        <button>Click Me!</button>
+    </div>
+
+    <div class="element" id="videoElement">
+        <video controls>
+            <source src="https://www.youtube.com/watch?v=LM7rtFJcnG8" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+       const tooltips = [
+            { element: '#imageElement', content: 'This is an image!' },
+            { element: '#squareElement', content: 'This is a square!' },
+            { element: '#soundElement', content: 'Play some sound!' },
+            { element: '#buttonElement', content: 'Click the button!' },
+            { element: '#videoElement', content: 'Watch the video!' }];
+        tooltips.forEach(tooltip => {
+            tippy(tooltip.element, {
+                content: tooltip.content,
+                theme: 'light',
+                animation: 'scale',
+                trigger: 'click',
+                interactive: true,
+                onClickOutside(instance) {
+                    instance.hide(); 
+                }});
+        });
+    </script>
+</body>
+</html>
